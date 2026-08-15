@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { FiMenu, FiX } from 'react-icons/fi';
+import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
 import './Navbar.css';
 
 const NAV_LINKS = [
@@ -12,9 +12,16 @@ const NAV_LINKS = [
   { to: '/contact', label: 'Contact' },
 ];
 
+const SOLUTIONS_LINKS = [
+  { to: '/government-solutions', label: 'Government Solutions' },
+  { to: '/industries', label: 'Industries We Serve' },
+  { to: '/partnerships', label: 'Teaming & Partnerships' },
+];
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -23,7 +30,9 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  useEffect(() => setOpen(false), [location]);
+  useEffect(() => { setOpen(false); setSolutionsOpen(false); }, [location]);
+
+  const solutionsActive = SOLUTIONS_LINKS.some(l => l.to === location.pathname);
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
@@ -40,6 +49,26 @@ export default function Navbar() {
               </NavLink>
             </li>
           ))}
+
+          <li className={`nav-dropdown ${solutionsOpen ? 'open' : ''}`}>
+            <button
+              type="button"
+              className={`nav-dropdown-toggle ${solutionsActive ? 'active' : ''}`}
+              onClick={() => setSolutionsOpen(v => !v)}
+            >
+              Solutions <FiChevronDown size={14} />
+            </button>
+            <ul className="nav-dropdown-menu">
+              {SOLUTIONS_LINKS.map(({ to, label }) => (
+                <li key={to}>
+                  <NavLink to={to} className={({ isActive }) => isActive ? 'active' : ''}>
+                    {label}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </li>
+
           <li className="nav-cta">
             <Link to="/contact" className="btn btn-primary">Contact Us →</Link>
           </li>

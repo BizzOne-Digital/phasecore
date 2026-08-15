@@ -7,9 +7,11 @@ import './Contact.css';
 const SERVICES = [
   { value: '', label: 'Select a service area' },
   { value: 'cybersecurity', label: 'Cybersecurity, Risk & Compliance' },
-  { value: 'it-technology', label: 'IT & Technology Services' },
-  { value: 'project-management', label: 'Project & Program Management' },
-  { value: 'business-consulting', label: 'Business & Management Consulting' },
+  { value: 'it-digital', label: 'IT & Digital Solutions' },
+  { value: 'management-professional', label: 'Management & Professional Services' },
+  { value: 'healthcare', label: 'Healthcare Technology & Compliance' },
+  { value: 'workforce-training', label: 'Workforce, Training & Administrative Support' },
+  { value: 'facilities', label: 'Facilities & Operational Services' },
   { value: 'other', label: 'Other / General Inquiry' },
 ];
 
@@ -74,11 +76,18 @@ export default function Contact() {
             </p>
 
             <div className="contact-details">
-              <a href="mailto:contracts@phasecore.com" className="contact-detail">
+              <a href="mailto:contracts@phasecoreconsulting.com" className="contact-detail">
                 <div className="cd-icon"><FiMail /></div>
                 <div>
-                  <div className="cd-label">Email</div>
-                  <div className="cd-value">contracts@phasecore.com</div>
+                  <div className="cd-label">Contracts</div>
+                  <div className="cd-value">contracts@phasecoreconsulting.com</div>
+                </div>
+              </a>
+              <a href="mailto:admin@phasecoreconsulting.com" className="contact-detail">
+                <div className="cd-icon"><FiMail /></div>
+                <div>
+                  <div className="cd-label">General Inquiries</div>
+                  <div className="cd-value">admin@phasecoreconsulting.com</div>
                 </div>
               </a>
               <a href="tel:7738659937" className="contact-detail">

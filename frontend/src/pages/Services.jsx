@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FiShield, FiCpu, FiClipboard, FiBriefcase, FiArrowRight } from 'react-icons/fi';
+import { FiShield, FiCpu, FiClipboard, FiBriefcase, FiHeart, FiUsers, FiTool, FiArrowRight } from 'react-icons/fi';
 import PageHero from '../components/ui/PageHero';
 import api from '../utils/api';
 import './Services.css';
@@ -10,6 +10,9 @@ const ICONS = {
   cpu: <FiCpu size={32} />,
   clipboard: <FiClipboard size={32} />,
   briefcase: <FiBriefcase size={32} />,
+  heart: <FiHeart size={32} />,
+  users: <FiUsers size={32} />,
+  tool: <FiTool size={32} />,
 };
 
 export default function Services() {

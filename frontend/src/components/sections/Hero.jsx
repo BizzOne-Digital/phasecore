@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
-import { FiArrowRight, FiShield, FiCpu, FiBarChart2, FiBriefcase } from 'react-icons/fi';
+import { FiArrowRight, FiShield, FiCpu, FiHeart, FiUsers } from 'react-icons/fi';
 import './Hero.css';
 
 const PILLARS = [
   { icon: <FiShield />, label: 'Cybersecurity & Compliance' },
-  { icon: <FiCpu />, label: 'IT & Technology' },
-  { icon: <FiBarChart2 />, label: 'Project Management' },
-  { icon: <FiBriefcase />, label: 'Business Consulting' },
+  { icon: <FiCpu />, label: 'IT & Digital Solutions' },
+  { icon: <FiHeart />, label: 'Healthcare Technology' },
+  { icon: <FiUsers />, label: 'Workforce & Operations' },
 ];
 
 const CLIENTS = [
@@ -36,25 +36,25 @@ export default function Hero() {
         </div>
 
         <h1 className="hero-headline">
-          <span className="line-1">Strategy.</span>
-          <span className="line-2">Technology.</span>
-          <span className="line-3 gold">Execution.</span>
+          <span className="line-1">Technology.</span>
+          <span className="line-2">Security. Operations.</span>
+          <span className="line-3 gold">Delivered.</span>
         </h1>
 
         <div className="gold-line" />
 
         <p className="hero-sub">
-          PhaseCore Consulting LLC delivers mission-focused consulting and technology solutions
-          that strengthen security, drive performance, and deliver measurable results for
-          government agencies and industry.
+          PhaseCore Consulting LLC delivers cybersecurity, IT, management consulting, healthcare
+          technology, workforce solutions, and operational support to help organizations reduce
+          risk, improve performance, and modernize operations.
         </p>
 
         <div className="hero-actions">
           <Link to="/services" className="btn btn-primary">
-            Explore Services <FiArrowRight />
+            Explore Our Capabilities <FiArrowRight />
           </Link>
           <Link to="/contact" className="btn btn-outline">
-            Contact Us <FiArrowRight />
+            Partner With PhaseCore <FiArrowRight />
           </Link>
         </div>
 

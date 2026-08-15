@@ -5,11 +5,13 @@ import './About.css';
 const VALUES = [
   { title: 'Integrity', desc: 'We conduct business ethically, communicate transparently, and take responsibility for our commitments.' },
   { title: 'Accountability', desc: 'We establish clear expectations and maintain ownership of deliverables and outcomes.' },
+  { title: 'Security', desc: 'Risk and compliance are embedded into how we plan and deliver every engagement.' },
   { title: 'Excellence', desc: 'We pursue quality in our work, partnerships, documentation, and customer service.' },
-  { title: 'Responsiveness', desc: 'We recognize that organizations operate in rapidly changing environments and require responsive partners.' },
   { title: 'Collaboration', desc: 'Successful solutions require cooperation between people, processes, technology, customers, and partners.' },
-  { title: 'Continuous Improvement', desc: 'We continuously evaluate opportunities to improve processes, strengthen performance, and deliver greater value.' },
+  { title: 'Agility', desc: 'We scale resources and adapt delivery to match evolving mission requirements.' },
 ];
+
+const DELIVERY_STEPS = ['Assess', 'Plan', 'Mobilize', 'Execute', 'Validate', 'Improve'];
 
 const CLIENTS = [
   'Federal Agencies', 'State Agencies', 'Local Governments',
@@ -23,7 +25,7 @@ export default function About() {
       <PageHero
         label="About PhaseCore"
         title="Built Around Execution"
-        subtitle="PhaseCore Consulting LLC is a professional services and solutions company focused on helping organizations successfully navigate technology, cybersecurity, compliance, project execution, and operational challenges."
+        subtitle="PhaseCore Consulting LLC is a multidisciplinary services firm supporting government and commercial clients with cybersecurity, IT, management consulting, healthcare technology, workforce solutions, and operational support."
       />
 
       {/* Approach */}
@@ -67,11 +69,11 @@ export default function About() {
           <div className="mv-grid">
             <div className="mv-card">
               <div className="mv-label">Our Mission</div>
-              <p>To provide practical, reliable, and scalable solutions that help organizations strengthen operations, manage risk, leverage technology, and accomplish their mission.</p>
+              <p>Deliver secure, scalable, and practical solutions that improve operations, reduce risk, and support mission success.</p>
             </div>
             <div className="mv-card">
               <div className="mv-label">Our Vision</div>
-              <p>To become a trusted solutions partner to government and commercial organizations seeking dependable expertise, disciplined execution, and measurable results.</p>
+              <p>To be a trusted partner recognized for reliability, integrity, and consistent delivery.</p>
             </div>
           </div>
         </div>
@@ -91,6 +93,26 @@ export default function About() {
                 <FiCheckCircle className="value-icon" />
                 <h3>{v.title}</h3>
                 <p>{v.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Delivery Model */}
+      <section className="section-sm about-mv">
+        <div className="container">
+          <div className="section-header center">
+            <span className="section-label">How We Work</span>
+            <h2 className="section-title">Our Delivery Model</h2>
+            <div className="gold-line center" />
+          </div>
+          <div className="delivery-model">
+            {DELIVERY_STEPS.map((step, i) => (
+              <div key={step} className="delivery-step">
+                <div className="delivery-num">{String(i + 1).padStart(2, '0')}</div>
+                <div className="delivery-label">{step}</div>
+                {i < DELIVERY_STEPS.length - 1 && <span className="delivery-arrow">→</span>}
               </div>
             ))}
           </div>

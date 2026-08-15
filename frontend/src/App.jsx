@@ -15,6 +15,9 @@ import Services from './pages/Services';
 import Portfolio from './pages/Portfolio';
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
+import GovernmentSolutions from './pages/GovernmentSolutions';
+import Industries from './pages/Industries';
+import Partnerships from './pages/Partnerships';
 
 import AdminLogin from './admin/pages/AdminLogin';
 import Dashboard from './admin/pages/Dashboard';
@@ -45,6 +48,9 @@ export default function App() {
           <Route path="/portfolio" element={<PublicLayout><Portfolio /></PublicLayout>} />
           <Route path="/faq" element={<PublicLayout><FAQ /></PublicLayout>} />
           <Route path="/contact" element={<PublicLayout><Contact /></PublicLayout>} />
+          <Route path="/government-solutions" element={<PublicLayout><GovernmentSolutions /></PublicLayout>} />
+          <Route path="/industries" element={<PublicLayout><Industries /></PublicLayout>} />
+          <Route path="/partnerships" element={<PublicLayout><Partnerships /></PublicLayout>} />
 
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin" element={<Navigate to="/admin/dashboard" replace />} />

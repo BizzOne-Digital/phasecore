@@ -68,7 +68,7 @@ const sendAutoReply = async (contact) => {
             Thank you for reaching out to PhaseCore Consulting LLC. We have received your inquiry and a member of our team will review your message and respond within <strong>1–2 business days</strong>.
           </p>
           <p style="color: #555; line-height: 1.6;">
-            If your matter is urgent, please contact us directly at <a href="mailto:contracts@phasecore.com" style="color: #C9962C;">contracts@phasecore.com</a>.
+            If your matter is urgent, please contact us directly at <a href="mailto:contracts@phasecoreconsulting.com" style="color: #C9962C;">contracts@phasecoreconsulting.com</a>.
           </p>
           <div style="background: #f5f5f5; border-left: 3px solid #C9962C; padding: 16px; margin: 24px 0; border-radius: 4px;">
             <p style="margin: 0; color: #333; font-size: 14px;"><strong>Your message summary:</strong></p>
