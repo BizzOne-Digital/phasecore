@@ -1,0 +1,126 @@
+.admin-login {
+  min-height: 100vh;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background-image:
+    linear-gradient(rgba(201,150,44,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,150,44,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.al-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 48px 44px;
+  width: 100%;
+  max-width: 420px;
+  backdrop-filter: blur(12px);
+}
+
+.al-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.al-logo-mark {
+  width: 44px; height: 44px;
+  background: var(--gold);
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.al-logo-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.al-logo-sub {
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.al-card h2 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.al-desc { color: rgba(255,255,255,0.5); font-size: 14px; margin-bottom: 28px; }
+
+.al-error {
+  background: rgba(239,68,68,0.1);
+  border: 1px solid rgba(239,68,68,0.3);
+  border-radius: var(--radius);
+  color: #fc8181;
+  padding: 12px 16px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.al-field {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.al-field-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gold);
+  font-size: 16px;
+}
+
+.al-field input {
+  width: 100%;
+  padding: 13px 16px 13px 42px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 14px;
+  transition: var(--transition);
+}
+
+.al-field input::placeholder { color: rgba(255,255,255,0.3); }
+.al-field input:focus { outline: none; border-color: var(--gold); background: rgba(201,150,44,0.05); }
+
+.al-btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--gold);
+  color: var(--navy);
+  border: none;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 8px;
+}
+
+.al-btn:hover:not(:disabled) { background: var(--gold-light); }
+.al-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.al-back { text-align: center; margin-top: 24px; }
+.al-back a { color: rgba(255,255,255,0.4); font-size: 13px; transition: var(--transition); }
+.al-back a:hover { color: var(--gold); }

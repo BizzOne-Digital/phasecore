@@ -1,0 +1,75 @@
+.portfolio-preview { background: var(--navy); }
+.portfolio-preview .section-title { color: var(--white); }
+.portfolio-preview .section-label { color: var(--gold); }
+
+.pp-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 48px;
+}
+
+.pp-header .btn-outline-dark {
+  color: var(--white);
+  border-color: rgba(255,255,255,0.3);
+}
+.pp-header .btn-outline-dark:hover { border-color: var(--gold); color: var(--gold); background: transparent; }
+
+.pp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.pp-card {
+  background: var(--navy-mid);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.07);
+  transition: var(--transition);
+}
+.pp-card:hover { transform: translateY(-6px); border-color: rgba(201,150,44,0.3); box-shadow: 0 16px 40px rgba(0,0,0,0.3); }
+
+.pp-image { position: relative; height: 200px; overflow: hidden; }
+.pp-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.pp-card:hover .pp-image img { transform: scale(1.05); }
+
+.pp-placeholder {
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, var(--navy-light), var(--navy-mid));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pp-placeholder span { font-family: var(--font-display); font-size: 64px; color: rgba(201,150,44,0.2); font-weight: 700; }
+
+.pp-category {
+  position: absolute;
+  top: 16px; left: 16px;
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+
+.pp-body { padding: 28px; }
+.pp-body h3 { font-family: var(--font-display); font-size: 19px; color: var(--white); margin-bottom: 10px; line-height: 1.3; }
+.pp-body p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.65; margin-bottom: 20px; }
+
+.pp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold);
+  transition: var(--transition);
+}
+.pp-link:hover { gap: 10px; }
+
+@media (max-width: 900px) { .pp-grid { grid-template-columns: 1fr; } .pp-header { flex-direction: column; align-items: flex-start; gap: 24px; } }
+@media (max-width: 600px) { .pp-grid { grid-template-columns: 1fr; } }
