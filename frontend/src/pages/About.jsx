@@ -11,7 +11,38 @@ const VALUES = [
   { title: 'Agility', desc: 'We scale resources and adapt delivery to match evolving mission requirements.' },
 ];
 
-const DELIVERY_STEPS = ['Assess', 'Plan', 'Mobilize', 'Execute', 'Validate', 'Improve'];
+const DELIVERY_STEPS = [
+  {
+    title: 'Assess',
+    tagline: 'Understand the mission. Identify the need.',
+    desc: 'We begin by understanding your objectives, requirements, operating environment, risks, constraints, and expected outcomes. Whether the engagement involves cybersecurity, IT, management consulting, operational support, or professional services, we establish a clear picture of what success requires.',
+  },
+  {
+    title: 'Plan',
+    tagline: 'Build the roadmap for successful delivery.',
+    desc: 'We translate requirements into a practical execution plan with defined scope, responsibilities, timelines, resources, deliverables, performance measures, and risk considerations. Our planning approach creates accountability and keeps every engagement aligned with contractual and operational expectations.',
+  },
+  {
+    title: 'Mobilize',
+    tagline: 'Put the right resources in place.',
+    desc: 'Once the plan is established, we assemble the personnel, technical expertise, partners, subcontractors, tools, and resources required for delivery. Our flexible model allows PhaseCore to scale capabilities according to project requirements while maintaining clear oversight and accountability.',
+  },
+  {
+    title: 'Execute',
+    tagline: 'Deliver with discipline and responsiveness.',
+    desc: 'We perform the work according to the approved scope, schedule, quality standards, and client requirements. Throughout execution, PhaseCore maintains active communication, monitors progress, coordinates stakeholders, manages risks, and addresses issues before they affect delivery.',
+  },
+  {
+    title: 'Validate',
+    tagline: 'Verify quality, compliance, and performance.',
+    desc: 'Delivery does not end when the work is completed. We evaluate results against established requirements, performance measures, quality expectations, and applicable standards. Findings, deliverables, and corrective actions are documented to provide transparency and demonstrate that objectives have been achieved.',
+  },
+  {
+    title: 'Improve',
+    tagline: 'Turn every engagement into lasting value.',
+    desc: 'We identify lessons learned, improvement opportunities, efficiencies, and recommendations that can strengthen future performance. Our goal is not simply to complete an engagement, but to help clients build more resilient, efficient, secure, and sustainable operations.',
+  },
+];
 
 const CLIENTS = [
   'Federal Agencies', 'State Agencies', 'Local Governments',
@@ -109,12 +140,27 @@ export default function About() {
           </div>
           <div className="delivery-model">
             {DELIVERY_STEPS.map((step, i) => (
-              <div key={step} className="delivery-step">
+              <div key={step.title} className="delivery-step">
                 <div className="delivery-num">{String(i + 1).padStart(2, '0')}</div>
-                <div className="delivery-label">{step}</div>
-                {i < DELIVERY_STEPS.length - 1 && <span className="delivery-arrow">→</span>}
+                <div className="delivery-body">
+                  <h3 className="delivery-title">{step.title}</h3>
+                  <p className="delivery-tagline">{step.tagline}</p>
+                  <p className="delivery-desc">{step.desc}</p>
+                </div>
               </div>
             ))}
+          </div>
+
+          <div className="approach-closing">
+            <span className="section-label">The PhaseCore Approach</span>
+            <h3>Assess. Plan. Mobilize. Execute. Validate. Improve.</h3>
+            <p className="approach-lede">One disciplined delivery framework — from requirement to result.</p>
+            <p>
+              PhaseCore combines specialized expertise, scalable resources, strong project governance,
+              and a commitment to measurable performance to help organizations move from complex
+              requirements to dependable outcomes.
+            </p>
+            <p className="approach-lede">Structured delivery. Responsive execution. Measurable results.</p>
           </div>
         </div>
       </section>

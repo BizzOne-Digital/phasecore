@@ -20,9 +20,9 @@ const CAPABILITIES = [
 const CONTRACT_INFO = [
   { label: 'Legal Name', value: 'PhaseCore Consulting LLC' },
   { label: 'Business Type', value: 'LLC' },
-  { label: 'SAM.gov', value: 'Registered / Active' },
-  { label: 'UEI', value: 'HHQRP9NBRSE5' },
-  { label: 'CAGE Code', value: '22Z91' },
+  { label: 'SAM.gov', value: 'Registered' },
+  { label: 'Contracting', value: 'Federal and State Contracting' },
+  { label: 'Business Status', value: 'Small Business' },
   { label: 'Service Area', value: 'United States' },
 ];
 
