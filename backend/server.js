@@ -7,11 +7,18 @@ const rateLimit = require('express-rate-limit');
 const connectDB = require('./config/db');
 const errorHandler = require('./middleware/errorHandler');
 
-// Connect to MongoDB
+// Connect to MongoDB (fire-and-forget here; requests wait on it via the middleware below)
 connectDB();
 
 const app = express();
 app.set('trust proxy', 1);
+
+// Ensure the DB connection is ready before handling any request — critical on
+// serverless (Vercel), where a cold start's first request can otherwise arrive
+// before mongoose finishes connecting and time out waiting on buffered queries.
+app.use((req, res, next) => {
+  connectDB().then(() => next()).catch(next);
+});
 
 // Security
 app.use(helmet());
