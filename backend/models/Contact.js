@@ -7,7 +7,7 @@ const contactSchema = new mongoose.Schema({
   organization: { type: String, trim: true },
   service: {
     type: String,
-    enum: ['cybersecurity', 'it-technology', 'project-management', 'business-consulting', 'other'],
+    enum: ['cybersecurity', 'it-digital', 'management-professional', 'healthcare', 'workforce-training', 'facilities', 'other'],
     default: 'other'
   },
   message: { type: String, required: true },
