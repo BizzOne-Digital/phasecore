@@ -13,12 +13,16 @@ const submitContact = asyncHandler(async (req, res) => {
     ipAddress: req.ip,
   });
 
-  // Send notifications (non-blocking)
+  // Send notifications — logged individually so a failure in one doesn't hide the other
   try {
     await sendContactNotification(contact);
+  } catch (err) {
+    console.error('[email] Notification FAILED:', err);
+  }
+  try {
     await sendAutoReply(contact);
   } catch (err) {
-    console.error('Email error:', err.message);
+    console.error('[email] Auto-reply FAILED:', err);
   }
 
   res.status(201).json({

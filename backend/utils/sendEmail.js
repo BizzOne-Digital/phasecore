@@ -13,13 +13,15 @@ const transporter = nodemailer.createTransport({
 const sendContactNotification = async (contact) => {
   const serviceLabels = {
     cybersecurity: 'Cybersecurity, Risk & Compliance',
-    'it-technology': 'IT & Technology Services',
-    'project-management': 'Project & Program Management',
-    'business-consulting': 'Business & Management Consulting',
+    'it-digital': 'IT & Digital Solutions',
+    'management-professional': 'Management & Professional Services',
+    healthcare: 'Healthcare Technology & Compliance',
+    'workforce-training': 'Workforce, Training & Administrative Support',
+    facilities: 'Facilities & Operational Services',
     other: 'Other / General Inquiry',
   };
 
-  await transporter.sendMail({
+  const info = await transporter.sendMail({
     from: process.env.SMTP_FROM,
     to: process.env.ADMIN_EMAIL,
     subject: `New Contact Form Submission — ${contact.name}`,
@@ -49,10 +51,11 @@ const sendContactNotification = async (contact) => {
       </div>
     `,
   });
+  console.log(`[email] Notification sent to ${process.env.ADMIN_EMAIL} — messageId: ${info.messageId}`);
 };
 
 const sendAutoReply = async (contact) => {
-  await transporter.sendMail({
+  const info = await transporter.sendMail({
     from: process.env.SMTP_FROM,
     to: contact.email,
     subject: 'We received your message — PhaseCore Consulting LLC',
@@ -84,6 +87,7 @@ const sendAutoReply = async (contact) => {
       </div>
     `,
   });
+  console.log(`[email] Auto-reply sent to ${contact.email} — messageId: ${info.messageId}`);
 };
 
 module.exports = { sendContactNotification, sendAutoReply };
