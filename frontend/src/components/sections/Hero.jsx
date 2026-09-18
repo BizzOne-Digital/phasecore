@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
-import { FiArrowRight, FiShield, FiCpu, FiHeart, FiUsers } from 'react-icons/fi';
+import { FiArrowRight, FiMonitor, FiPackage, FiTool, FiShield } from 'react-icons/fi';
 import './Hero.css';
 
 const PILLARS = [
-  { icon: <FiShield />, label: 'Cybersecurity & Compliance' },
-  { icon: <FiCpu />, label: 'IT & Digital Solutions' },
-  { icon: <FiHeart />, label: 'Healthcare Technology' },
-  { icon: <FiUsers />, label: 'Workforce & Operations' },
+  { icon: <FiMonitor />, label: 'Technology Products' },
+  { icon: <FiPackage />, label: 'Government Supplies' },
+  { icon: <FiTool />, label: 'Facilities & Operations' },
+  { icon: <FiShield />, label: 'IT & Cybersecurity' },
 ];
 
 const CLIENTS = [
@@ -37,24 +37,28 @@ export default function Hero() {
 
         <h1 className="hero-headline">
           <span className="line-1">Technology.</span>
-          <span className="line-2">Security. Operations.</span>
-          <span className="line-3 gold">Delivered.</span>
+          <span className="line-2">Procurement.</span>
+          <span className="line-3 gold">Operational Solutions.</span>
         </h1>
 
         <div className="gold-line" />
 
         <p className="hero-sub">
-          PhaseCore Consulting LLC delivers cybersecurity, IT, management consulting, healthcare
-          technology, workforce solutions, and operational support to help organizations reduce
-          risk, improve performance, and modernize operations.
+          PhaseCore Consulting LLC helps government agencies, educational institutions, and
+          commercial organizations source technology products, workplace supplies, and
+          operational solutions — while delivering experienced IT, cybersecurity, risk, and
+          project-management support.
         </p>
 
         <div className="hero-actions">
-          <Link to="/services" className="btn btn-primary">
-            Explore Our Capabilities <FiArrowRight />
+          <Link to="/contact" className="btn btn-primary">
+            Request a Quote <FiArrowRight />
           </Link>
-          <Link to="/contact" className="btn btn-outline">
-            Partner With PhaseCore <FiArrowRight />
+          <Link to="/services" className="btn btn-outline">
+            View Capabilities <FiArrowRight />
+          </Link>
+          <Link to="/government-solutions" className="btn btn-outline">
+            Government Buyers <FiArrowRight />
           </Link>
         </div>
 

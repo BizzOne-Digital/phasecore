@@ -37,6 +37,16 @@ export default function Footer() {
           </div>
 
           <div className="footer-links-group">
+            <h4>Products</h4>
+            <ul>
+              <li><Link to="/products#technology">Technology & Accessories</Link></li>
+              <li><Link to="/products#supplies">Office & General Supplies</Link></li>
+              <li><Link to="/products#facilities">Facilities & Janitorial</Link></li>
+              <li><Link to="/products#safety">Safety & PPE</Link></li>
+            </ul>
+          </div>
+
+          <div className="footer-links-group">
             <h4>Services</h4>
             <ul>
               <li><Link to="/services">Cybersecurity & Compliance</Link></li>

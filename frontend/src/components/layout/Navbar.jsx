@@ -12,16 +12,32 @@ const NAV_LINKS = [
   { to: '/contact', label: 'Contact' },
 ];
 
-const SOLUTIONS_LINKS = [
-  { to: '/government-solutions', label: 'Government Solutions' },
-  { to: '/industries', label: 'Industries We Serve' },
-  { to: '/partnerships', label: 'Teaming & Partnerships' },
+const DROPDOWNS = [
+  {
+    key: 'products',
+    label: 'Products',
+    links: [
+      { to: '/products#technology', label: 'Technology & Computer Accessories' },
+      { to: '/products#supplies', label: 'Office & General Supplies' },
+      { to: '/products#facilities', label: 'Facilities & Janitorial Supplies' },
+      { to: '/products#safety', label: 'Safety & PPE' },
+    ],
+  },
+  {
+    key: 'solutions',
+    label: 'Solutions',
+    links: [
+      { to: '/government-solutions', label: 'Government Solutions' },
+      { to: '/industries', label: 'Industries We Serve' },
+      { to: '/partnerships', label: 'Teaming & Partnerships' },
+    ],
+  },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -30,9 +46,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  useEffect(() => { setOpen(false); setSolutionsOpen(false); }, [location]);
-
-  const solutionsActive = SOLUTIONS_LINKS.some(l => l.to === location.pathname);
+  useEffect(() => { setOpen(false); setOpenDropdown(null); }, [location]);
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
@@ -50,24 +64,29 @@ export default function Navbar() {
             </li>
           ))}
 
-          <li className={`nav-dropdown ${solutionsOpen ? 'open' : ''}`}>
-            <button
-              type="button"
-              className={`nav-dropdown-toggle ${solutionsActive ? 'active' : ''}`}
-              onClick={() => setSolutionsOpen(v => !v)}
-            >
-              Solutions <FiChevronDown size={14} />
-            </button>
-            <ul className="nav-dropdown-menu">
-              {SOLUTIONS_LINKS.map(({ to, label }) => (
-                <li key={to}>
-                  <NavLink to={to} className={({ isActive }) => isActive ? 'active' : ''}>
-                    {label}
-                  </NavLink>
-                </li>
-              ))}
-            </ul>
-          </li>
+          {DROPDOWNS.map((d) => {
+            const isActive = d.links.some(l => l.to.split('#')[0] === location.pathname);
+            return (
+              <li key={d.key} className={`nav-dropdown ${openDropdown === d.key ? 'open' : ''}`}>
+                <button
+                  type="button"
+                  className={`nav-dropdown-toggle ${isActive ? 'active' : ''}`}
+                  onClick={() => setOpenDropdown(v => v === d.key ? null : d.key)}
+                >
+                  {d.label} <FiChevronDown size={14} />
+                </button>
+                <ul className="nav-dropdown-menu">
+                  {d.links.map(({ to, label }) => (
+                    <li key={to}>
+                      <NavLink to={to} className={({ isActive: a }) => a ? 'active' : ''}>
+                        {label}
+                      </NavLink>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            );
+          })}
 
           <li className="nav-cta">
             <Link to="/contact" className="btn btn-primary">Contact Us →</Link>

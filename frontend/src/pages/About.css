@@ -86,6 +86,17 @@
 .approach-card { background: var(--off-white); border-radius: var(--radius-lg); padding: 28px; border-left: 4px solid var(--gray-200); transition: var(--transition); }
 .approach-card.featured { border-left-color: var(--gold); background: var(--white); box-shadow: var(--shadow); }
 .approach-icon { font-size: 28px; color: var(--gold); margin-bottom: 12px; }
+
+.cat-icon {
+  width: 64px; height: 64px;
+  background: var(--navy);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
 .approach-card h3 { font-family: var(--font-display); font-size: 20px; color: var(--navy); margin-bottom: 8px; }
 .approach-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
 

@@ -48,6 +48,7 @@ export default function Contact() {
       await api.post('/contact', form);
       setSuccess(true);
       setForm({ name: '', email: '', phone: '', organization: '', service: '', message: '' });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } catch (err) {
       setServerError(err.response?.data?.message || 'Something went wrong. Please try again.');
     } finally {

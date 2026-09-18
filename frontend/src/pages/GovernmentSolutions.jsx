@@ -3,18 +3,36 @@ import { FiArrowRight } from 'react-icons/fi';
 import PageHero from '../components/ui/PageHero';
 import './About.css';
 
-const CAPABILITIES = [
-  'Cybersecurity & Information Assurance',
-  'IT Services & Support',
-  'Program & Project Management',
-  'Management Consulting',
-  'Risk & Compliance',
-  'Healthcare Technology',
-  'Data & Analytics',
-  'Administrative Support',
-  'Workforce Solutions',
-  'Training Services',
-  'Facilities & Maintenance Services',
+const CAPABILITY_GROUPS = [
+  {
+    title: 'Technology & IT Equipment',
+    items: [
+      'Computer Peripherals', 'Monitors and Displays', 'Docking Stations',
+      'Networking Equipment', 'Cables and Adapters', 'Storage Products',
+      'Printers and Accessories', 'UPS/Power Products', 'Audio/Video Equipment',
+    ],
+  },
+  {
+    title: 'General & Workplace Supplies',
+    items: [
+      'Office Supplies', 'Paper Products', 'Workplace Equipment',
+      'Safety/PPE', 'General Institutional Supplies',
+    ],
+  },
+  {
+    title: 'Facilities & Maintenance Supplies',
+    items: [
+      'Janitorial Consumables', 'Cleaning Products', 'Trash Liners',
+      'Paper/Tissue Products', 'Grounds and Facility Supplies',
+    ],
+  },
+  {
+    title: 'Professional Services',
+    items: [
+      'IT Consulting', 'Cybersecurity/GRC', 'Program/Project Management',
+      'Risk and Compliance', 'Technical Training',
+    ],
+  },
 ];
 
 const CONTRACT_INFO = [
@@ -38,13 +56,18 @@ export default function GovernmentSolutions() {
       <section className="section">
         <div className="container about-approach">
           <div className="approach-content">
-            <span className="section-label">Mission-Ready Delivery</span>
+            <span className="section-label">Government Procurement & Contracting</span>
             <h2 className="section-title">Built for Government Requirements</h2>
             <div className="gold-line" />
             <p>
-              Government delivery requires compliance, accountability, documentation, and consistent
-              execution. PhaseCore structures every engagement around these requirements from day one —
-              so agencies get dependable delivery, not just recommendations.
+              PhaseCore Consulting LLC supports federal, state, local government, and educational
+              customers with responsive product sourcing, technology procurement, operational
+              supplies, and professional services.
+            </p>
+            <p style={{ marginTop: 16 }}>
+              We work with manufacturers, distributors, and service partners to provide compliant,
+              competitively priced solutions aligned with agency requirements, delivery schedules,
+              and applicable procurement standards.
             </p>
           </div>
         </div>
@@ -57,10 +80,17 @@ export default function GovernmentSolutions() {
             <h2 className="section-title">Core Capabilities</h2>
             <div className="gold-line center" />
           </div>
-          <div className="serve-grid" style={{ marginTop: 32 }}>
-            {CAPABILITIES.map((c) => (
-              <div key={c} className="serve-pill" style={{ background: 'var(--off-white)', border: '1px solid var(--gray-200)', color: 'var(--navy)' }}>
-                {c}
+          <div className="values-grid" style={{ marginTop: 32 }}>
+            {CAPABILITY_GROUPS.map((g) => (
+              <div key={g.title} className="value-card">
+                <h3>{g.title}</h3>
+                <ul style={{ listStyle: 'none', marginTop: 12 }}>
+                  {g.items.map((item) => (
+                    <li key={item} style={{ fontSize: 13.5, color: 'var(--text-secondary)', padding: '5px 0', borderBottom: '1px solid var(--gray-200)' }}>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
