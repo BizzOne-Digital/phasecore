@@ -31,7 +31,7 @@ const AREAS = [
 
 export default function CapabilityAreas() {
   return (
-    <section className="section capability-areas">
+    <section id="capabilities" className="section capability-areas" style={{ scrollMarginTop: 100 }}>
       <div className="container">
         <div className="section-header center">
           <span className="section-label">What We Provide</span>

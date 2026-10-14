@@ -52,12 +52,12 @@ export default function ServicesSection() {
     <section className="section services-section">
       <div className="container">
         <div className="section-header center">
-          <span className="section-label">Our Core Capabilities</span>
-          <h2 className="section-title">Solutions Designed Around Your Mission</h2>
+          <span className="section-label">Backed By Experienced Teams</span>
+          <h2 className="section-title">Professional Services That Support Every Order</h2>
           <div className="gold-line center" />
           <p className="section-desc">
-            PhaseCore provides integrated professional and operational services that can be delivered
-            independently or combined to support larger programs and initiatives.
+            Beyond products and supplies, PhaseCore's IT, cybersecurity, and compliance teams are
+            available to support implementation, risk management, and ongoing program needs.
           </p>
         </div>
 

@@ -9,9 +9,9 @@ export default function Home() {
     <>
       <Hero />
       <CapabilityAreas />
-      <ServicesSection />
       <WhyChoose />
       <PortfolioPreview />
+      <ServicesSection />
     </>
   );
 }

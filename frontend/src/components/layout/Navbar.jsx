@@ -3,17 +3,12 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
 import './Navbar.css';
 
-const NAV_LINKS = [
-  { to: '/', label: 'Home' },
-  { to: '/about', label: 'About Us' },
-  { to: '/services', label: 'Services' },
-  { to: '/portfolio', label: 'Portfolio' },
-  { to: '/faq', label: 'FAQ' },
-  { to: '/contact', label: 'Contact' },
-];
-
-const DROPDOWNS = [
+// Order follows the agreed nav structure:
+// Home | Products | Services | Government Solutions | About | Capabilities | Contact
+const NAV_ITEMS = [
+  { type: 'link', to: '/', label: 'Home' },
   {
+    type: 'dropdown',
     key: 'products',
     label: 'Products',
     links: [
@@ -24,14 +19,21 @@ const DROPDOWNS = [
     ],
   },
   {
-    key: 'solutions',
-    label: 'Solutions',
+    type: 'dropdown',
+    key: 'services',
+    label: 'Services',
+    to: '/services',
     links: [
-      { to: '/government-solutions', label: 'Government Solutions' },
-      { to: '/industries', label: 'Industries We Serve' },
-      { to: '/partnerships', label: 'Teaming & Partnerships' },
+      { to: '/services', label: 'IT & Cybersecurity' },
+      { to: '/services', label: 'GRC & Compliance' },
+      { to: '/services', label: 'Project Management' },
+      { to: '/services', label: 'Technology Consulting' },
     ],
   },
+  { type: 'link', to: '/government-solutions', label: 'Government Solutions' },
+  { type: 'link', to: '/about', label: 'About Us' },
+  { type: 'link', to: '/#capabilities', label: 'Capabilities' },
+  { type: 'link', to: '/contact', label: 'Contact' },
 ];
 
 export default function Navbar() {
@@ -56,28 +58,33 @@ export default function Navbar() {
         </Link>
 
         <ul className={`navbar-links ${open ? 'open' : ''}`}>
-          {NAV_LINKS.map(({ to, label }) => (
-            <li key={to}>
-              <NavLink to={to} className={({ isActive }) => isActive ? 'active' : ''} end={to === '/'}>
-                {label}
-              </NavLink>
-            </li>
-          ))}
+          {NAV_ITEMS.map((item) => {
+            if (item.type === 'link') {
+              return (
+                <li key={item.to}>
+                  <NavLink to={item.to} className={({ isActive }) => isActive ? 'active' : ''} end={item.to === '/'}>
+                    {item.label}
+                  </NavLink>
+                </li>
+              );
+            }
 
-          {DROPDOWNS.map((d) => {
-            const isActive = d.links.some(l => l.to.split('#')[0] === location.pathname);
+            const isActive = item.to
+              ? location.pathname === item.to
+              : item.links.some(l => l.to.split('#')[0] === location.pathname);
+
             return (
-              <li key={d.key} className={`nav-dropdown ${openDropdown === d.key ? 'open' : ''}`}>
+              <li key={item.key} className={`nav-dropdown ${openDropdown === item.key ? 'open' : ''}`}>
                 <button
                   type="button"
                   className={`nav-dropdown-toggle ${isActive ? 'active' : ''}`}
-                  onClick={() => setOpenDropdown(v => v === d.key ? null : d.key)}
+                  onClick={() => setOpenDropdown(v => v === item.key ? null : item.key)}
                 >
-                  {d.label} <FiChevronDown size={14} />
+                  {item.label} <FiChevronDown size={14} />
                 </button>
                 <ul className="nav-dropdown-menu">
-                  {d.links.map(({ to, label }) => (
-                    <li key={to}>
+                  {item.links.map(({ to, label }, i) => (
+                    <li key={`${to}-${i}`}>
                       <NavLink to={to} className={({ isActive: a }) => a ? 'active' : ''}>
                         {label}
                       </NavLink>
