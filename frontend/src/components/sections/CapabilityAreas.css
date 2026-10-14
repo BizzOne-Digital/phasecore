@@ -1,4 +1,4 @@
-.capability-areas { background: var(--white); }
+.capability-areas { background: var(--off-white); }
 
 .capability-grid {
   display: grid;
@@ -10,7 +10,7 @@
 .capability-card {
   display: flex;
   flex-direction: column;
-  background: var(--off-white);
+  background: var(--white);
   border: 1px solid var(--gray-200);
   border-radius: var(--radius-lg);
   padding: 32px 24px;
