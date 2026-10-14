@@ -124,3 +124,7 @@
   .values-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 600px) { .values-grid { grid-template-columns: 1fr; } }
+
+/* Exactly 4 items (Government Solutions capability groups) reads better as 2x2 than 3+1 */
+.gov-capability-grid { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 700px) { .gov-capability-grid { grid-template-columns: 1fr; } }

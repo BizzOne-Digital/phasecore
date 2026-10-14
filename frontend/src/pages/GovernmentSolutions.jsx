@@ -80,7 +80,7 @@ export default function GovernmentSolutions() {
             <h2 className="section-title">Core Capabilities</h2>
             <div className="gold-line center" />
           </div>
-          <div className="values-grid" style={{ marginTop: 32 }}>
+          <div className="values-grid gov-capability-grid" style={{ marginTop: 32 }}>
             {CAPABILITY_GROUPS.map((g) => (
               <div key={g.title} className="value-card">
                 <h3>{g.title}</h3>
