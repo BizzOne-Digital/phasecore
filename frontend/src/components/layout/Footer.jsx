@@ -19,7 +19,7 @@ export default function Footer() {
             <div className="footer-logo">
               <img src="/logo1.png" alt="PhaseCore Consulting LLC" className="logo-img" />
             </div>
-            <p>Technology. Security. Operations. Delivered. — Integrated solutions for government and commercial organizations.</p>
+            <p>Technology. Procurement. Operational Solutions. — Supplying products, IT, and professional services to government and commercial organizations.</p>
             <div className="footer-social">
               <a href="#" aria-label="LinkedIn"><FiLinkedin /></a>
               <a href="#" aria-label="Twitter/X"><FiTwitter /></a>

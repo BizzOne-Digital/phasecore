@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { FiPlus, FiMinus } from 'react-icons/fi';
 import PageHero from '../components/ui/PageHero';
 import api from '../utils/api';
@@ -10,7 +11,7 @@ const FALLBACK_FAQS = [
   { _id: '3', question: 'Can PhaseCore support subcontracting relationships?', answer: 'Yes. PhaseCore actively partners with prime contractors as a subcontractor and is open to teaming arrangements where our expertise in cybersecurity, IT, project management, and business consulting adds value to a larger program or proposal.' },
   { _id: '4', question: 'How does PhaseCore approach client engagements?', answer: 'We begin every engagement by understanding the requirement, objectives, constraints, and stakeholders. From there, we develop a structured approach and execute against clearly defined expectations with regular communication, milestone tracking, and documented deliverables.' },
   { _id: '5', question: 'What cybersecurity frameworks does PhaseCore support?', answer: 'Our cybersecurity team supports recognized frameworks and standards including NIST CSF, NIST 800-53, ISO 27001, SOC 2, CMMC, PCI DSS, SOX, COBIT, and other applicable regulatory requirements.' },
-  { _id: '6', question: 'How do I request a capabilities statement or proposal?', answer: 'You can reach us directly at contracts@phasecore.com or by calling (773) 865-9937. We are happy to provide a capabilities statement tailored to your specific procurement area or discuss how PhaseCore can support your program needs.' },
+  { _id: '6', question: 'How do I request a capabilities statement or proposal?', answer: 'You can reach us directly at contracts@phasecoreconsulting.com or by calling (773) 865-9937. We are happy to provide a capabilities statement tailored to your specific procurement area or discuss how PhaseCore can support your program needs.' },
   { _id: '7', question: 'Can PhaseCore support both small and large-scale initiatives?', answer: 'Yes. PhaseCore is structured to scale. For engagements requiring specialized expertise, additional personnel, geographic coverage, or operational resources, we can work with qualified professionals and strategic delivery partners while maintaining centralized project coordination and performance oversight.' },
   { _id: '8', question: 'What is PhaseCore\'s pricing model?', answer: 'Our pricing depends on the scope, duration, and complexity of each engagement. We offer time-and-materials, fixed-price, and retainer-based arrangements depending on the nature of the work. Contact us to discuss your specific requirements and receive a tailored proposal.' },
 ];
@@ -69,7 +70,7 @@ export default function FAQ() {
           <div className="faq-cta-box">
             <h3>Still Have Questions?</h3>
             <p>Our team is ready to answer your questions and discuss how PhaseCore can support your mission.</p>
-            <a href="/contact" className="btn btn-primary">Contact Us →</a>
+            <Link to="/contact" className="btn btn-primary">Contact Us →</Link>
           </div>
         </div>
       </section>
