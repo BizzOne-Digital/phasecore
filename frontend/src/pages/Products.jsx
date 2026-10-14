@@ -57,7 +57,12 @@ export default function Products() {
       />
 
       {CATEGORIES.map((cat, i) => (
-        <section key={cat.id} id={cat.id} className={`section ${i % 2 === 1 ? 'about-values' : ''}`} style={{ scrollMarginTop: 100 }}>
+        <section
+          key={cat.id}
+          id={cat.id}
+          className="section"
+          style={{ scrollMarginTop: 100, background: i % 2 === 1 ? 'var(--off-white)' : 'var(--white)' }}
+        >
           <div className="container about-approach">
             <div className="approach-content">
               <div className="cat-icon">{cat.icon}</div>
@@ -71,7 +76,7 @@ export default function Products() {
 
             <div className="serve-grid" style={{ justifyContent: 'flex-start' }}>
               {cat.items.map((item) => (
-                <div key={item} className="serve-pill" style={{ background: 'var(--white)', border: '1px solid var(--gray-200)', color: 'var(--navy)' }}>
+                <div key={item} className="serve-pill" style={{ background: i % 2 === 1 ? 'var(--white)' : 'var(--off-white)', border: '1px solid var(--gray-200)', color: 'var(--navy)' }}>
                   {item}
                 </div>
               ))}

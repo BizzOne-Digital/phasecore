@@ -53,7 +53,7 @@ export default function GovernmentSolutions() {
         subtitle="PhaseCore supports federal, state, and local agencies with integrated cybersecurity, IT, professional, workforce, and operational services."
       />
 
-      <section className="section">
+      <section className="section" style={{ background: 'var(--off-white)' }}>
         <div className="container about-approach">
           <div className="approach-content">
             <span className="section-label">Government Procurement & Contracting</span>
