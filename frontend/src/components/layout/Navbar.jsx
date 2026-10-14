@@ -60,6 +60,16 @@ export default function Navbar() {
         <ul className={`navbar-links ${open ? 'open' : ''}`}>
           {NAV_ITEMS.map((item) => {
             if (item.type === 'link') {
+              // Hash-only destinations (in-page anchors) use a plain Link — NavLink's
+              // path matching would otherwise mark them active on every page, since
+              // their resolved pathname is just "/".
+              if (item.to.includes('#')) {
+                return (
+                  <li key={item.to}>
+                    <Link to={item.to}>{item.label}</Link>
+                  </li>
+                );
+              }
               return (
                 <li key={item.to}>
                   <NavLink to={item.to} className={({ isActive }) => isActive ? 'active' : ''} end={item.to === '/'}>
@@ -85,9 +95,7 @@ export default function Navbar() {
                 <ul className="nav-dropdown-menu">
                   {item.links.map(({ to, label }, i) => (
                     <li key={`${to}-${i}`}>
-                      <NavLink to={to} className={({ isActive: a }) => a ? 'active' : ''}>
-                        {label}
-                      </NavLink>
+                      <Link to={to}>{label}</Link>
                     </li>
                   ))}
                 </ul>
