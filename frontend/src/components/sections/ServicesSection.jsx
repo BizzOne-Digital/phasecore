@@ -4,45 +4,39 @@ import './ServicesSection.css';
 
 const SERVICES = [
   {
-    icon: <FiShield size={28} />,
-    title: 'Cybersecurity, Risk & Compliance',
-    desc: 'Security, governance, and compliance services aligned to regulatory and contractual requirements.',
-    features: ['Risk Assessments', 'GRC Programs', 'NIST & CMMC Support', 'Audit Readiness'],
+    icon: <FiCpu size={28} />,
+    title: 'IT & Digital Solutions',
+    desc: 'Supporting infrastructure, systems, data, and digital operations.',
     link: '/services',
   },
   {
-    icon: <FiCpu size={28} />,
-    title: 'IT & Digital Solutions',
-    desc: 'Technology services supporting infrastructure, systems, data, and digital operations.',
-    features: ['Cloud & Infrastructure', 'IT Modernization', 'Data & Analytics', 'Technical Support'],
+    icon: <FiShield size={28} />,
+    title: 'Cybersecurity, Risk & Compliance',
+    desc: 'Governance and compliance services aligned to regulatory and contractual requirements.',
     link: '/services',
   },
   {
     icon: <FiBriefcase size={28} />,
     title: 'Management & Professional Services',
-    desc: 'Program, project, and organizational support focused on execution and performance improvement.',
-    features: ['Program & Project Management', 'Governance Support', 'Risk Management', 'Quality Assurance'],
+    desc: 'Program and project support focused on execution and performance.',
     link: '/services',
   },
   {
     icon: <FiHeart size={28} />,
     title: 'Healthcare Technology & Compliance',
-    desc: 'IT and cybersecurity support for healthcare environments and regulatory compliance.',
-    features: ['Healthcare IT Consulting', 'HIPAA Security Support', 'Risk Assessments', 'Audit Readiness'],
+    desc: 'IT support for healthcare environments and regulatory needs.',
     link: '/services',
   },
   {
     icon: <FiUsers size={28} />,
-    title: 'Workforce, Training & Administrative Support',
-    desc: 'Staffing, training, documentation, and administrative support services.',
-    features: ['Staff Augmentation', 'Technical Training', 'Administrative Support', 'Documentation'],
+    title: 'Workforce & Administrative Support',
+    desc: 'Staffing, training, and administrative support services.',
     link: '/services',
   },
   {
     icon: <FiTool size={28} />,
     title: 'Facilities & Operational Services',
-    desc: 'Facility operations, maintenance coordination, and support services delivered directly or through partners.',
-    features: ['Facilities Management', 'Custodial Services', 'Grounds Maintenance', 'Vendor Coordination'],
+    desc: 'Operations and maintenance support delivered directly or through partners.',
     link: '/services',
   },
 ];
@@ -63,15 +57,10 @@ export default function ServicesSection() {
 
         <div className="services-grid">
           {SERVICES.map((s, i) => (
-            <div key={i} className="service-card">
+            <div key={i} className="service-card service-card-compact">
               <div className="service-icon">{s.icon}</div>
               <h3>{s.title}</h3>
               <p>{s.desc}</p>
-              <ul className="service-features">
-                {s.features.map((f) => (
-                  <li key={f}><span className="check">✓</span>{f}</li>
-                ))}
-              </ul>
               <Link to={s.link} className="service-link">
                 Learn More <FiArrowRight />
               </Link>

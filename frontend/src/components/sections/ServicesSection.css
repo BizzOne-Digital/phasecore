@@ -93,7 +93,10 @@
   font-weight: 600;
   color: var(--gold);
   transition: var(--transition);
+  margin-top: auto;
 }
+
+.service-card-compact p { flex: 1; }
 
 .service-link:hover { gap: 10px; }
 
