@@ -3,10 +3,10 @@ import { FiArrowRight, FiMonitor, FiPackage, FiTool, FiShield } from 'react-icon
 import './Hero.css';
 
 const PILLARS = [
-  { icon: <FiMonitor />, label: 'Technology Products' },
-  { icon: <FiPackage />, label: 'Government Supplies' },
-  { icon: <FiTool />, label: 'Facilities & Operations' },
-  { icon: <FiShield />, label: 'IT & Cybersecurity' },
+  { icon: <FiMonitor />, label: 'IT Equipment & Accessories' },
+  { icon: <FiPackage />, label: 'Office & General Supplies' },
+  { icon: <FiTool />, label: 'Facilities & Grounds' },
+  { icon: <FiShield />, label: 'Cybersecurity & Consulting' },
 ];
 
 const CLIENTS = [
@@ -36,29 +36,23 @@ export default function Hero() {
         </div>
 
         <h1 className="hero-headline">
-          <span className="line-1">Technology.</span>
-          <span className="line-2">Procurement.</span>
-          <span className="line-3 gold">Operational Solutions.</span>
+          <span className="line-1">Reliable Procurement.</span>
+          <span className="line-3 gold">Practical Solutions.</span>
         </h1>
 
         <div className="gold-line" />
 
         <p className="hero-sub">
-          PhaseCore Consulting LLC helps government agencies, educational institutions, and
-          commercial organizations source technology products, workplace supplies, and
-          operational solutions — while delivering experienced IT, cybersecurity, risk, and
-          project-management support.
+          Technology equipment, office supplies, facility solutions, and professional services
+          for government and commercial organizations.
         </p>
 
         <div className="hero-actions">
-          <Link to="/contact" className="btn btn-primary">
+          <Link to="/request-a-quote" className="btn btn-primary">
             Request a Quote <FiArrowRight />
           </Link>
-          <Link to="/services" className="btn btn-outline">
+          <Link to="/products" className="btn btn-outline">
             View Capabilities <FiArrowRight />
-          </Link>
-          <Link to="/government-solutions" className="btn btn-outline">
-            Government Buyers <FiArrowRight />
           </Link>
         </div>
 

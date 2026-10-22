@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FiArrowRight, FiMonitor, FiPackage, FiTool, FiShield } from 'react-icons/fi';
+import { FiArrowRight, FiMonitor, FiPackage, FiTool, FiShield, FiSun } from 'react-icons/fi';
 import PageHero from '../components/ui/PageHero';
 import './About.css';
 
@@ -37,6 +37,16 @@ const CATEGORIES = [
     ],
   },
   {
+    id: 'landscaping',
+    icon: <FiSun size={32} />,
+    title: 'Landscaping & Grounds Maintenance',
+    desc: 'Landscaping supplies, groundskeeping support, and subcontractor-supported maintenance solutions.',
+    items: [
+      'Landscaping Supplies', 'Groundskeeping Support', 'Lawn & Turf Care',
+      'Seasonal Grounds Maintenance', 'Subcontractor-Supported Maintenance',
+    ],
+  },
+  {
     id: 'safety',
     icon: <FiShield size={32} />,
     title: 'Safety & PPE',
@@ -70,7 +80,7 @@ export default function Products() {
               <div className="gold-line" />
               <p>{cat.desc}</p>
               <div style={{ marginTop: 24 }}>
-                <Link to="/contact" className="btn btn-primary">Request a Quote <FiArrowRight /></Link>
+                <Link to="/request-a-quote" className="btn btn-primary">Request a Quote <FiArrowRight /></Link>
               </div>
             </div>
 
@@ -92,7 +102,7 @@ export default function Products() {
           <p style={{ color: 'rgba(255,255,255,0.6)', maxWidth: 520, margin: '0 auto 32px' }}>
             Tell us what you need and we'll put together a competitive, compliant quote for your agency or organization.
           </p>
-          <Link to="/contact" className="btn btn-primary">Request a Quote <FiArrowRight /></Link>
+          <Link to="/request-a-quote" className="btn btn-primary">Request a Quote <FiArrowRight /></Link>
         </div>
       </section>
     </>

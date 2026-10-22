@@ -19,10 +19,13 @@ import GovernmentSolutions from './pages/GovernmentSolutions';
 import Industries from './pages/Industries';
 import Partnerships from './pages/Partnerships';
 import Products from './pages/Products';
+import RequestQuote from './pages/RequestQuote';
+import CapabilityStatement from './pages/CapabilityStatement';
 
 import AdminLogin from './admin/pages/AdminLogin';
 import Dashboard from './admin/pages/Dashboard';
 import ContactsAdmin from './admin/pages/ContactsAdmin';
+import QuotesAdmin from './admin/pages/QuotesAdmin';
 import PortfolioAdmin from './admin/pages/PortfolioAdmin';
 import FAQAdmin from './admin/pages/FAQAdmin';
 import ServicesAdmin from './admin/pages/ServicesAdmin';
@@ -53,11 +56,14 @@ export default function App() {
           <Route path="/industries" element={<PublicLayout><Industries /></PublicLayout>} />
           <Route path="/partnerships" element={<PublicLayout><Partnerships /></PublicLayout>} />
           <Route path="/products" element={<PublicLayout><Products /></PublicLayout>} />
+          <Route path="/request-a-quote" element={<PublicLayout><RequestQuote /></PublicLayout>} />
+          <Route path="/capability-statement" element={<PublicLayout><CapabilityStatement /></PublicLayout>} />
 
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin" element={<Navigate to="/admin/dashboard" replace />} />
           <Route path="/admin/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
           <Route path="/admin/contacts" element={<ProtectedRoute><ContactsAdmin /></ProtectedRoute>} />
+          <Route path="/admin/quotes" element={<ProtectedRoute><QuotesAdmin /></ProtectedRoute>} />
           <Route path="/admin/portfolio" element={<ProtectedRoute><PortfolioAdmin /></ProtectedRoute>} />
           <Route path="/admin/services" element={<ProtectedRoute><ServicesAdmin /></ProtectedRoute>} />
           <Route path="/admin/faqs" element={<ProtectedRoute><FAQAdmin /></ProtectedRoute>} />

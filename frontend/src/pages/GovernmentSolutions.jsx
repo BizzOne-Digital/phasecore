@@ -37,20 +37,22 @@ const CAPABILITY_GROUPS = [
 
 const CONTRACT_INFO = [
   { label: 'Legal Name', value: 'PhaseCore Consulting LLC' },
-  { label: 'Business Type', value: 'LLC' },
+  { label: 'Business Location', value: 'Celina, Texas' },
+  { label: 'UEI', value: 'HHQRP9NBRSE5' },
   { label: 'SAM.gov', value: 'Registered' },
-  { label: 'Contracting', value: 'Federal and State Contracting' },
-  { label: 'Business Status', value: 'Small Business' },
-  { label: 'Service Area', value: 'United States' },
+  { label: 'Business Type', value: 'Small business — subject to applicable size standards' },
+  { label: 'Core NAICS', value: '423430, 424120, 423850, 541611' },
+  { label: 'Other NAICS', value: 'Additional supply, IT, facility, and landscaping codes available upon request' },
+  { label: 'Contact', value: 'contracts@phasecoreconsulting.com' },
 ];
 
 export default function GovernmentSolutions() {
   return (
     <>
       <PageHero
-        label="Government Solutions"
-        title="Supporting Government Missions"
-        subtitle="PhaseCore supports federal, state, and local agencies with integrated cybersecurity, IT, professional, workforce, and operational services."
+        label="Government Contracting"
+        title="Government Procurement, Technology & Business Solutions"
+        subtitle="Supporting federal, state, and local government agencies with technology products, office supplies, facility solutions, and specialized professional services."
       />
 
       <section className="section" style={{ background: 'var(--off-white)' }}>
@@ -112,9 +114,9 @@ export default function GovernmentSolutions() {
               </div>
             ))}
           </div>
-          <p style={{ textAlign: 'center', marginTop: 24, color: 'var(--text-secondary)', fontSize: 13 }}>
-            NAICS codes available upon request.
-          </p>
+          <div style={{ textAlign: 'center', marginTop: 32 }}>
+            <Link to="/capability-statement" className="btn btn-outline-dark">View Capability Statement</Link>
+          </div>
         </div>
       </section>
 
@@ -125,7 +127,7 @@ export default function GovernmentSolutions() {
           <p style={{ color: 'rgba(255,255,255,0.6)', maxWidth: 520, margin: '0 auto 32px' }}>
             Reach out to discuss contracting, subcontracting, or teaming opportunities.
           </p>
-          <Link to="/contact" className="btn btn-primary">Contact PhaseCore <FiArrowRight /></Link>
+          <Link to="/request-a-quote" className="btn btn-primary">Request a Quote <FiArrowRight /></Link>
         </div>
       </section>
     </>

@@ -1,11 +1,12 @@
 import { NavLink, useNavigate } from 'react-router-dom';
-import { FiGrid, FiMail, FiImage, FiList, FiHelpCircle, FiLogOut, FiExternalLink } from 'react-icons/fi';
+import { FiGrid, FiMail, FiFileText, FiImage, FiList, FiHelpCircle, FiLogOut, FiExternalLink } from 'react-icons/fi';
 import { useAuth } from '../../context/AuthContext';
 import './AdminLayout.css';
 
 const NAV = [
   { to: '/admin/dashboard', icon: <FiGrid />, label: 'Dashboard' },
   { to: '/admin/contacts', icon: <FiMail />, label: 'Contacts' },
+  { to: '/admin/quotes', icon: <FiFileText />, label: 'Quotes' },
   { to: '/admin/portfolio', icon: <FiImage />, label: 'Portfolio' },
   { to: '/admin/services', icon: <FiList />, label: 'Services' },
   { to: '/admin/faqs', icon: <FiHelpCircle />, label: 'FAQs' },

@@ -90,4 +90,83 @@ const sendAutoReply = async (contact) => {
   console.log(`[email] Auto-reply sent to ${contact.email} — messageId: ${info.messageId}`);
 };
 
-module.exports = { sendContactNotification, sendAutoReply };
+const sendQuoteNotification = async (quote) => {
+  const info = await transporter.sendMail({
+    from: process.env.SMTP_FROM,
+    to: process.env.ADMIN_EMAIL,
+    subject: `New Request for Quote — ${quote.name}`,
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <div style="background: #1a1f2e; padding: 24px; border-bottom: 3px solid #C9962C;">
+          <h2 style="color: #C9962C; margin: 0;">PhaseCore — New Request for Quote</h2>
+        </div>
+        <div style="padding: 24px; background: #f9f9f9;">
+          <table style="width: 100%; border-collapse: collapse;">
+            <tr><td style="padding: 8px 0; color: #666; width: 160px;"><strong>Name:</strong></td><td style="padding: 8px 0;">${quote.name}</td></tr>
+            <tr><td style="padding: 8px 0; color: #666;"><strong>Email:</strong></td><td style="padding: 8px 0;"><a href="mailto:${quote.email}">${quote.email}</a></td></tr>
+            <tr><td style="padding: 8px 0; color: #666;"><strong>Phone:</strong></td><td style="padding: 8px 0;">${quote.phone || 'Not provided'}</td></tr>
+            <tr><td style="padding: 8px 0; color: #666;"><strong>Organization:</strong></td><td style="padding: 8px 0;">${quote.organization || 'Not provided'}</td></tr>
+            <tr><td style="padding: 8px 0; color: #666;"><strong>Quantity:</strong></td><td style="padding: 8px 0;">${quote.quantity || 'Not provided'}</td></tr>
+            <tr><td style="padding: 8px 0; color: #666;"><strong>Delivery Location:</strong></td><td style="padding: 8px 0;">${quote.deliveryLocation || 'Not provided'}</td></tr>
+            <tr><td style="padding: 8px 0; color: #666;"><strong>Deadline:</strong></td><td style="padding: 8px 0;">${quote.deadline || 'Not provided'}</td></tr>
+          </table>
+          <div style="margin-top: 16px;">
+            <strong style="color: #666;">Items / Specifications Needed:</strong>
+            <div style="background: #fff; border-left: 3px solid #C9962C; padding: 16px; margin-top: 8px; border-radius: 4px;">
+              ${quote.itemsNeeded}
+            </div>
+          </div>
+          ${quote.notes ? `
+          <div style="margin-top: 16px;">
+            <strong style="color: #666;">Additional Notes:</strong>
+            <div style="background: #fff; border-left: 3px solid #C9962C; padding: 16px; margin-top: 8px; border-radius: 4px;">
+              ${quote.notes}
+            </div>
+          </div>` : ''}
+          ${quote.specFile?.url ? `
+          <div style="margin-top: 16px;">
+            <strong style="color: #666;">Specification File:</strong>
+            <p><a href="${quote.specFile.url}" style="color: #C9962C;">${quote.specFile.originalName || 'Download attachment'}</a></p>
+          </div>` : ''}
+          <div style="margin-top: 24px; font-size: 12px; color: #999;">
+            Submitted: ${new Date(quote.createdAt).toLocaleString('en-US', { timeZone: 'America/New_York' })} ET
+          </div>
+        </div>
+      </div>
+    `,
+  });
+  console.log(`[email] Quote notification sent to ${process.env.ADMIN_EMAIL} — messageId: ${info.messageId}`);
+};
+
+const sendQuoteAutoReply = async (quote) => {
+  const info = await transporter.sendMail({
+    from: process.env.SMTP_FROM,
+    to: quote.email,
+    subject: 'We received your request for quote — PhaseCore Consulting LLC',
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <div style="background: #1a1f2e; padding: 24px; border-bottom: 3px solid #C9962C;">
+          <h2 style="color: #C9962C; margin: 0;">PhaseCore Consulting LLC</h2>
+          <p style="color: #ccc; margin: 8px 0 0;">Reliable Procurement. Practical Solutions.</p>
+        </div>
+        <div style="padding: 32px; background: #fff;">
+          <p style="color: #333; font-size: 16px;">Dear ${quote.name},</p>
+          <p style="color: #555; line-height: 1.6;">
+            Thank you for your request for quote. Our team has received your requirements and will
+            prepare a competitive, compliant quote and respond within <strong>1–2 business days</strong>.
+          </p>
+          <p style="color: #555; line-height: 1.6;">
+            If your matter is urgent, please contact us directly at <a href="mailto:contracts@phasecoreconsulting.com" style="color: #C9962C;">contracts@phasecoreconsulting.com</a>.
+          </p>
+          <p style="color: #333;"><strong>PhaseCore Consulting LLC</strong></p>
+        </div>
+        <div style="background: #1a1f2e; padding: 16px; text-align: center;">
+          <p style="color: #888; font-size: 12px; margin: 0;">© ${new Date().getFullYear()} PhaseCore Consulting LLC. All rights reserved.</p>
+        </div>
+      </div>
+    `,
+  });
+  console.log(`[email] Quote auto-reply sent to ${quote.email} — messageId: ${info.messageId}`);
+};
+
+module.exports = { sendContactNotification, sendAutoReply, sendQuoteNotification, sendQuoteAutoReply };

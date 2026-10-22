@@ -4,24 +4,27 @@ import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
 import './Navbar.css';
 
 // Order follows the agreed nav structure:
-// Home | Products | Services | Government Solutions | About | Capabilities | Contact
+// Home | About Us | Products & Solutions | Government Contracting | Professional Services | Capability Statement | Contact
 const NAV_ITEMS = [
   { type: 'link', to: '/', label: 'Home' },
+  { type: 'link', to: '/about', label: 'About Us' },
   {
     type: 'dropdown',
     key: 'products',
-    label: 'Products',
+    label: 'Products & Solutions',
     links: [
       { to: '/products#technology', label: 'Technology & Computer Accessories' },
       { to: '/products#supplies', label: 'Office & General Supplies' },
       { to: '/products#facilities', label: 'Facilities & Janitorial Supplies' },
+      { to: '/products#landscaping', label: 'Landscaping & Grounds Maintenance' },
       { to: '/products#safety', label: 'Safety & PPE' },
     ],
   },
+  { type: 'link', to: '/government-solutions', label: 'Government Contracting' },
   {
     type: 'dropdown',
     key: 'services',
-    label: 'Services',
+    label: 'Professional Services',
     to: '/services',
     links: [
       { to: '/services', label: 'IT & Cybersecurity' },
@@ -30,9 +33,7 @@ const NAV_ITEMS = [
       { to: '/services', label: 'Technology Consulting' },
     ],
   },
-  { type: 'link', to: '/government-solutions', label: 'Government Solutions' },
-  { type: 'link', to: '/about', label: 'About Us' },
-  { type: 'link', to: '/#capabilities', label: 'Capabilities' },
+  { type: 'link', to: '/capability-statement', label: 'Capability Statement' },
   { type: 'link', to: '/contact', label: 'Contact' },
 ];
 
@@ -104,7 +105,7 @@ export default function Navbar() {
           })}
 
           <li className="nav-cta">
-            <Link to="/contact" className="btn btn-primary">Contact Us →</Link>
+            <Link to="/request-a-quote" className="btn btn-primary">Request a Quote →</Link>
           </li>
         </ul>
 

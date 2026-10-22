@@ -10,9 +10,9 @@ const SERVICES = [
     link: '/services',
   },
   {
-    icon: <FiShield size={28} />,
-    title: 'Cybersecurity, Risk & Compliance',
-    desc: 'Governance and compliance services aligned to regulatory and contractual requirements.',
+    icon: <FiTool size={28} />,
+    title: 'Facilities & Operational Services',
+    desc: 'Operations and maintenance support delivered directly or through partners.',
     link: '/services',
   },
   {
@@ -22,21 +22,21 @@ const SERVICES = [
     link: '/services',
   },
   {
-    icon: <FiHeart size={28} />,
-    title: 'Healthcare Technology & Compliance',
-    desc: 'IT support for healthcare environments and regulatory needs.',
-    link: '/services',
-  },
-  {
     icon: <FiUsers size={28} />,
     title: 'Workforce & Administrative Support',
     desc: 'Staffing, training, and administrative support services.',
     link: '/services',
   },
   {
-    icon: <FiTool size={28} />,
-    title: 'Facilities & Operational Services',
-    desc: 'Operations and maintenance support delivered directly or through partners.',
+    icon: <FiHeart size={28} />,
+    title: 'Healthcare Technology & Compliance',
+    desc: 'IT support for healthcare environments and regulatory needs.',
+    link: '/services',
+  },
+  {
+    icon: <FiShield size={28} />,
+    title: 'Cybersecurity, Risk & Compliance',
+    desc: 'Selective professional-services engagements in governance, risk, and compliance.',
     link: '/services',
   },
 ];

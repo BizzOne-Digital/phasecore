@@ -35,7 +35,7 @@ app.use(cors({
 }));
 
 // Rate limiting
-app.use('/api/contact', rateLimit({
+app.use(['/api/contact', '/api/quotes'], rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 10,
   message: { success: false, message: 'Too many submissions. Please try again later.' },
@@ -51,6 +51,7 @@ if (process.env.NODE_ENV === 'development') {
 // Routes
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/contact', require('./routes/contact'));
+app.use('/api/quotes', require('./routes/quotes'));
 app.use('/api/portfolio', require('./routes/portfolio'));
 app.use('/api', require('./routes/services'));
 

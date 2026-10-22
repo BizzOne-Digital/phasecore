@@ -5,26 +5,26 @@ import './CapabilityAreas.css';
 const AREAS = [
   {
     icon: <FiMonitor size={28} />,
-    title: 'Technology Products & Accessories',
-    desc: 'Computers, monitors, docking stations, keyboards, mice, headsets, webcams, cables, adapters, storage, UPS units, networking accessories, and printers/peripherals.',
+    title: 'IT Equipment & Accessories',
+    desc: 'Laptops, desktops, tablets, monitors, printers, computer accessories, networking equipment, and related technology products.',
     link: '/products#technology',
   },
   {
     icon: <FiPackage size={28} />,
-    title: 'Government & Institutional Supplies',
-    desc: 'Office supplies, paper, PPE, safety products, workplace supplies, and general commercial products for agencies and institutions.',
+    title: 'Office & General Supplies',
+    desc: 'Copy paper, envelopes, stationery, printing consumables, office equipment, and institutional supplies.',
     link: '/products#supplies',
   },
   {
     icon: <FiTool size={28} />,
-    title: 'Facilities & Operational Supplies',
-    desc: 'Janitorial consumables, paper products, cleaning supplies, trash liners, facility consumables, and grounds/maintenance supplies.',
+    title: 'Facilities & Grounds',
+    desc: 'Janitorial and custodial supplies, cleaning and sanitation materials, landscaping, and groundskeeping support.',
     link: '/products#facilities',
   },
   {
     icon: <FiShield size={28} />,
-    title: 'IT, Cybersecurity & Professional Services',
-    desc: 'IT consulting, GRC, cybersecurity, cloud, project management, risk/compliance, and technical training.',
+    title: 'Cybersecurity & Consulting',
+    desc: 'Risk assessments, IT controls, compliance, governance, vulnerability management, and technical advisory.',
     link: '/services',
   },
 ];
@@ -34,12 +34,12 @@ export default function CapabilityAreas() {
     <section id="capabilities" className="section capability-areas" style={{ scrollMarginTop: 100 }}>
       <div className="container">
         <div className="section-header center">
-          <span className="section-label">What We Provide</span>
-          <h2 className="section-title">Four Ways We Support Your Mission</h2>
+          <span className="section-label">Core Capabilities</span>
+          <h2 className="section-title">What We Supply & Support</h2>
           <div className="gold-line center" />
           <p className="section-desc">
-            PhaseCore Consulting LLC provides technology products, IT solutions, business supplies,
-            and operational support to government and commercial organizations.
+            Supporting federal, state, and local government agencies with technology products,
+            office supplies, facility solutions, and specialized professional services.
           </p>
         </div>
 
