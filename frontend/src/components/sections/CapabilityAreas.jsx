@@ -5,26 +5,26 @@ import './CapabilityAreas.css';
 const AREAS = [
   {
     icon: <FiMonitor size={28} />,
-    title: 'IT Equipment & Accessories',
-    desc: 'Laptops, desktops, tablets, monitors, printers, computer accessories, networking equipment, and related technology products.',
+    title: 'Technology Products',
+    desc: 'Computers, monitors, tablets, peripherals, printers and related IT equipment.',
     link: '/products#technology',
   },
   {
     icon: <FiPackage size={28} />,
     title: 'Office & General Supplies',
-    desc: 'Copy paper, envelopes, stationery, printing consumables, office equipment, and institutional supplies.',
+    desc: 'Copy paper, envelopes, stationery, office essentials and institutional supplies.',
     link: '/products#supplies',
   },
   {
     icon: <FiTool size={28} />,
-    title: 'Facilities & Grounds',
-    desc: 'Janitorial and custodial supplies, cleaning and sanitation materials, landscaping, and groundskeeping support.',
+    title: 'Facility Solutions',
+    desc: 'Janitorial and custodial products, facility supplies, landscaping and grounds support.',
     link: '/products#facilities',
   },
   {
     icon: <FiShield size={28} />,
-    title: 'Cybersecurity & Consulting',
-    desc: 'Risk assessments, IT controls, compliance, governance, vulnerability management, and technical advisory.',
+    title: 'Technology & Risk Advisory',
+    desc: 'Cybersecurity, GRC, IT controls, vulnerability assessment and business consulting.',
     link: '/services',
   },
 ];

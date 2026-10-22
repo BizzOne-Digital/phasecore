@@ -3,10 +3,10 @@ import { FiArrowRight, FiMonitor, FiPackage, FiTool, FiShield } from 'react-icon
 import './Hero.css';
 
 const PILLARS = [
-  { icon: <FiMonitor />, label: 'IT Equipment & Accessories' },
+  { icon: <FiMonitor />, label: 'Technology Products' },
   { icon: <FiPackage />, label: 'Office & General Supplies' },
-  { icon: <FiTool />, label: 'Facilities & Grounds' },
-  { icon: <FiShield />, label: 'Cybersecurity & Consulting' },
+  { icon: <FiTool />, label: 'Facility Solutions' },
+  { icon: <FiShield />, label: 'Technology & Risk Advisory' },
 ];
 
 const CLIENTS = [
@@ -36,15 +36,20 @@ export default function Hero() {
         </div>
 
         <h1 className="hero-headline">
-          <span className="line-1">Reliable Procurement.</span>
-          <span className="line-3 gold">Practical Solutions.</span>
+          <span className="line-1">Practical Procurement.</span>
+          <span className="line-3 gold">Reliable Business Solutions.</span>
         </h1>
 
         <div className="gold-line" />
 
         <p className="hero-sub">
-          Technology equipment, office supplies, facility solutions, and professional services
-          for government and commercial organizations.
+          PhaseCore Consulting LLC supports government agencies, educational institutions, and
+          commercial organizations with technology equipment, office and general supplies,
+          facility products, and specialized professional services.
+        </p>
+        <p className="hero-sub">
+          We focus on understanding purchasing requirements, sourcing specification-matched
+          solutions, coordinating fulfillment, and providing responsive business support.
         </p>
 
         <div className="hero-actions">
