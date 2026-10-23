@@ -109,7 +109,7 @@
   white-space: nowrap;
 }
 
-@media (min-width: 901px) {
+@media (min-width: 1201px) {
   .nav-dropdown:hover .nav-dropdown-menu,
   .nav-dropdown.open .nav-dropdown-menu {
     opacity: 1;
@@ -127,7 +127,7 @@
   padding: 6px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .hamburger { display: flex; }
 
   .navbar-links {
