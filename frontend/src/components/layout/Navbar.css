@@ -93,8 +93,8 @@
 .nav-dropdown-toggle:hover,
 .nav-dropdown-toggle.active { color: var(--gold); }
 
-/* Breathing room restored once there's enough width to spare */
-@media (min-width: 1400px) {
+/* Breathing room restored only on genuinely wide displays */
+@media (min-width: 1800px) {
   .navbar-links { gap: 6px; }
   .navbar-links a,
   .nav-dropdown-toggle { font-size: 13.5px; padding: 8px 14px; }
@@ -127,7 +127,7 @@
   white-space: nowrap;
 }
 
-@media (min-width: 1201px) {
+@media (min-width: 1301px) {
   .nav-dropdown:hover .nav-dropdown-menu,
   .nav-dropdown.open .nav-dropdown-menu {
     opacity: 1;
@@ -145,7 +145,7 @@
   padding: 6px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
   .hamburger { display: flex; }
 
   .navbar-links {
