@@ -24,14 +24,12 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  flex-shrink: 0;
 }
 
 .logo-img {
   height: clamp(44px, 3.2vw, 64px);
   width: auto;
   object-fit: contain;
-  flex-shrink: 0;
 }
 
 .navbar-links {
@@ -40,14 +38,7 @@
   list-style: none;
   gap: 2px;
   flex-wrap: nowrap;
-  flex: 1 1 auto;
-  min-width: 0;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
 }
-
-.navbar-links::-webkit-scrollbar { display: none; }
 
 .navbar-links a {
   display: inline-block;
@@ -93,15 +84,6 @@
 .nav-dropdown-toggle:hover,
 .nav-dropdown-toggle.active { color: var(--gold); }
 
-/* Breathing room restored only on genuinely wide displays */
-@media (min-width: 1800px) {
-  .navbar-links { gap: 6px; }
-  .navbar-links a,
-  .nav-dropdown-toggle { font-size: 13.5px; padding: 8px 14px; }
-  .nav-cta { margin-left: 12px; }
-  .nav-cta .btn { padding: 10px 20px; font-size: 13px; }
-}
-
 .nav-dropdown-menu {
   list-style: none;
   position: absolute;
@@ -127,7 +109,7 @@
   white-space: nowrap;
 }
 
-@media (min-width: 1301px) {
+@media (min-width: 1201px) {
   .nav-dropdown:hover .nav-dropdown-menu,
   .nav-dropdown.open .nav-dropdown-menu {
     opacity: 1;
@@ -145,7 +127,7 @@
   padding: 6px;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1200px) {
   .hamburger { display: flex; }
 
   .navbar-links {
