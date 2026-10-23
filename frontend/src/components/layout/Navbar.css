@@ -84,6 +84,15 @@
 .nav-dropdown-toggle:hover,
 .nav-dropdown-toggle.active { color: var(--gold); }
 
+/* Breathing room restored once there's enough width to spare */
+@media (min-width: 1400px) {
+  .navbar-links { gap: 6px; }
+  .navbar-links a,
+  .nav-dropdown-toggle { font-size: 13.5px; padding: 8px 14px; }
+  .nav-cta { margin-left: 12px; }
+  .nav-cta .btn { padding: 10px 20px; font-size: 13px; }
+}
+
 .nav-dropdown-menu {
   list-style: none;
   position: absolute;
