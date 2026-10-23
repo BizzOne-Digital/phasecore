@@ -24,12 +24,14 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
 }
 
 .logo-img {
   height: clamp(44px, 3.2vw, 64px);
   width: auto;
   object-fit: contain;
+  flex-shrink: 0;
 }
 
 .navbar-links {
@@ -38,7 +40,14 @@
   list-style: none;
   gap: 2px;
   flex-wrap: nowrap;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
+
+.navbar-links::-webkit-scrollbar { display: none; }
 
 .navbar-links a {
   display: inline-block;
